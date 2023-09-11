@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 100px;
+            height: 100px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .card .icon {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+        }
+
+        .card.flipped {
+            background-color: white;
+            color: #007BFF;
+            border: 2px solid #007BFF;
+        }
+
+        .card.flipped .icon {
+            display: block;
+        }
+
+        #reset-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Juego de Memoria</h1>
+        <div class="board" id="board"></div>
+        <button id="reset-button">Reiniciar</button>
+    </div>
+    <script>
+        // JavaScript aquí
+        const board = document.getElementById("board");
+        const resetButton = document.getElementById("reset-button");
+
+        // Iconos para las cartas
+        const icons = [
+            "sun", "car", "house", "cloud",
+            "dog", "rocket", "pizza-slice", "bicycle"
+        ];
+
+        let cards = [];
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let canFlip = true;
+
+        function createDeck() {
+            const cardIcons = icons.concat(icons); // Duplicar los iconos para emparejarlos
+            cardIcons.sort(() => Math.random() - 0.5); // Barajar las cartas
+
+            for (let i = 0; i < cardIcons.length; i++) {
+                const card = document.createElement("div");
+                card.classList.add("card");
+                card.innerHTML = `<i class="fas fa-${cardIcons[i]} icon"></i>`;
+                card.addEventListener("click", flipCard);
+                cards.push(card);
+            }
+        }
+
+        function flipCard() {
+            if (!canFlip || this.classList.contains("flipped") || flippedCards.length === 2) return;
+
+            this.classList.add("flipped");
+            flippedCards.push(this);
+
+            if (flippedCards.length === 2) {
+                canFlip = false;
+                setTimeout(checkMatch, 1000);
+            }
+        }
+
+        function checkMatch() {
+            const [card1, card2] = flippedCards;
+
+            if (card1.querySelector(".icon").className === card2.querySelector(".icon").className) {
+                card1.removeEventListener("click", flipCard);
+                card2.removeEventListener("click", flipCard);
+                matchedPairs++;
+                if (matchedPairs === icons.length) {
+                    setTimeout(() => {
+                        alert("¡Has ganado! ¡Todas las cartas se han emparejado!");
+                    }, 500);
+                }
+            } else {
+                card1.classList.remove("flipped");
+                card2.classList.remove("flipped");
+            }
+
+            flippedCards = [];
+            canFlip = true;
+        }
+
+        function resetGame() {
+            board.innerHTML = "";
+            cards = [];
+            flippedCards = [];
+            matchedPairs = 0;
+            canFlip = true;
+            createDeck();
+            cards.forEach(card => board.appendChild(card));
+        }
+
+        resetButton.addEventListener("click", resetGame);
+
+        // Iniciar el juego al cargar la página
+        createDeck();
+        cards.forEach(card => board.appendChild(card));
+    </script>
+</body>
+</html>
