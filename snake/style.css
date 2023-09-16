@@ -15,9 +15,9 @@ body {
 }
 
 .wrapper {
-    width: 80vw; /* Ajusta el ancho para hacerlo adaptable */
-    max-width: 350px; /* Establece un ancho máximo para evitar que se agrande demasiado */
-    height: 60vh; /* Ajusta la altura para hacerlo adaptable */
+    width: 90vw; 
+    max-width: 350px; 
+    height: 70vh; 
     display: flex;
     overflow: hidden;
     flex-direction: column;
@@ -49,3 +49,17 @@ body {
 .play-board .head {
     background: #60cbff;
 }
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 99%; 
+        max-width: 350px; 
+        height: 45vh; 
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        border-radius: 7px;
+        background: #293447;
+    }
+    
+  }
