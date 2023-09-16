@@ -39,6 +39,55 @@ const changeDirection = (e) => {
     }
 }
 
+// Agregar soporte para eventos táctiles
+document.addEventListener("touchstart", handleTouchStart, false);
+document.addEventListener("touchmove", handleTouchMove, false);
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+}
+
+function handleTouchMove(event) {
+    if (!touchStartX || !touchStartY) {
+        return;
+    }
+
+    const touchEndX = event.touches[0].clientX;
+    const touchEndY = event.touches[0].clientY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    // Determinar la dirección basada en el desplazamiento táctil
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Desplazamiento horizontal
+        if (deltaX > 0 && velocityX !== -1) {
+            velocityX = 1;
+            velocityY = 0;
+        } else if (deltaX < 0 && velocityX !== 1) {
+            velocityX = -1;
+            velocityY = 0;
+        }
+    } else {
+        // Desplazamiento vertical
+        if (deltaY > 0 && velocityY !== -1) {
+            velocityX = 0;
+            velocityY = 1;
+        } else if (deltaY < 0 && velocityY !== 1) {
+            velocityX = 0;
+            velocityY = -1;
+        }
+    }
+
+    // Limpiar los valores de inicio para evitar movimientos no deseados
+    touchStartX = 0;
+    touchStartY = 0;
+}
+
 const initGame = () => {
     if (gameover) return handlegameover();
 
