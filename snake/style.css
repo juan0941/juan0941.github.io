@@ -43,11 +43,16 @@ body {
 }
 
 .play-board .food {
-    background: #ff003d;
+    background: #212837;
+    background-image: url('../snake/img/manzana.png');
+    background-size:cover; /* Ajusta cómo se muestra la imagen dentro del elemento */
+    font-size: large;
 }
+
 
 .play-board .head {
     background: #60cbff;
+    background-image: url('../snake/img/snake.jpg'); 
 }
 
 @media screen and (max-width: 768px) {
