@@ -11,12 +11,13 @@ body {
     justify-content: center;
     min-height: 100vh;
     background: #e3f2fd;
-    overflow: hidden; /* Agregar esta línea para deshabilitar el scroll */
+    overflow: hidden;
 }
 
 .wrapper {
-    width: 65vmin;
-    height: 70vmin;
+    width: 80vw; /* Ajusta el ancho para hacerlo adaptable */
+    max-width: 350px; /* Establece un ancho máximo para evitar que se agrande demasiado */
+    height: 60vh; /* Ajusta la altura para hacerlo adaptable */
     display: flex;
     overflow: hidden;
     flex-direction: column;
@@ -26,16 +27,16 @@ body {
 
 .game-details {
     color: #b8c6dc;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
-    padding: 20px 27px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
 }
 
 .play-board {
     width: 100%;
-    height: 100%;
+    flex-grow: 1; /* Permite que el tablero crezca para llenar el espacio disponible */
     background: #212837;
     display: grid;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
