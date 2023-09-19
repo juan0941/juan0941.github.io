@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girasol Animado</title>
+    <style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1536633125620-8a3245c11ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTJ8fHxlbnwwfHx8fHw%3D&w=1000&q=80');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+
+
+        .girasol {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            animation: girar 5s linear infinite, oscilar 2s ease-in-out infinite alternate;
+        }
+
+        .petalo {
+            position: absolute;
+            width: 40px;
+            height: 100px;
+            background-color: #FFD700;
+            border-radius: 50% 50% 0 0;
+            transform-origin: center bottom;
+        }
+
+        .petalo:nth-child(odd) {
+            transform: rotate(45deg);
+        }
+
+        .petalo:nth-child(even) {
+            transform: rotate(90deg);
+        }
+
+        .petalo:nth-child(1) {
+            transform: rotate(22.5deg);
+        }
+
+        .petalo:nth-child(2) {
+            transform: rotate(67.5deg);
+        }
+
+        .petalo:nth-child(3) {
+            transform: rotate(112.5deg);
+        }
+
+        .petalo:nth-child(4) {
+            transform: rotate(157.5deg);
+        }
+
+        .petalo:nth-child(5) {
+            transform: rotate(202.5deg);
+        }
+
+        .petalo:nth-child(6) {
+            transform: rotate(247.5deg);
+        }
+
+        .petalo:nth-child(7) {
+            transform: rotate(292.5deg);
+        }
+
+        .petalo:nth-child(8) {
+            transform: rotate(337.5deg);
+        }
+
+        @keyframes girar {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes oscilar {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="girasol">
+        <div class="petalo"></div>
+        <div class="petalo"></div>
+        <div class="petalo"></div>
+        <div class="petalo"></div>
+        <div class="petalo"></div>
+        <div class="petalo"></div>
+        <div class="petalo"></div>
+        <div class="petalo"></div>
+    </div>
+</body>
+</html>
