@@ -226,7 +226,7 @@ video {
 /* Slider */
 .slider {
     width: 400px;
-    max-width: 600px;
+    max-width: 800px;
     height: 500px;
     margin: 2rem auto;
     position: relative;
@@ -315,6 +315,35 @@ video {
 
 @media (min-width: 1024px) {
     .slider {
+        width: 60%;
+    }
+}
+
+.contenedor-corazon{
+    width: 90%;
+    justify-content: center;
+    justify-items: center;
+    margin-left: 25px;
+}
+.contenedor-corazon img{
+    border-radius: 30px;
+}
+@media (min-width: 768px) {
+    .btn {
+        font-size: 2rem;
+    }
+
+    .contenedor-corazon {
+        width: 80%;
+    }
+
+    .textEncabezado h2 {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contenedor-corazon {
         width: 60%;
     }
 }
