@@ -207,7 +207,7 @@ img {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    
+    margin-top: 20px;
     cursor: pointer;
     
 }
@@ -215,7 +215,7 @@ img {
 
 
 video {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 20px;
     display: block;
