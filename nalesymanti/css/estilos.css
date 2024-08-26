@@ -71,7 +71,7 @@ img {
     left: 0;
     right: 0; 
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255);
     z-index: 4;
 }
 
@@ -176,47 +176,54 @@ img {
 /* Video */
 .contenidoHeader {
     position: relative;
+    width: 100%;
+    height: auto;
 }
-body{
-    background: #fff;
-}
-.contenidoHeader::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
+
+.contenedorEncabezado {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .textoEncabezado {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     z-index: 2;
-    width: 50%;
-    height: 65%;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
+    color: #fff; /* Color del texto */
 }
 
 .textoEncabezado h2 {
-    color: var(--blanco);
     font-size: 2rem;
+    margin: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
     
+    cursor: pointer;
+    
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Color del botón en hover */
 }
 
 video {
-    width: 300px;
+    width: 60%;
     height: auto;
     border-radius: 20px;
-    
-    background-color: #fff;
-    margin-top: 80px;
-    border: solid 2px black;
-
+    display: block;
 }
+
+
 
 /* Slider */
 .slider {
