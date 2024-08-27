@@ -13,6 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let active = 0;
     let refreshInterval = setInterval(() => next.click(), 3000);
 
+
+    function showHeart(element) {
+        const heart = element.querySelector('.heart');
+        heart.style.display = 'block';
+        
+        // Reiniciar la animación
+        heart.style.animation = 'none';
+        heart.offsetHeight; // Forzar el reflujo para reiniciar la animación
+        heart.style.animation = 'fadeOut 2s forwards';
+    
+        // Ocultar el corazón después de la animación
+        setTimeout(() => {
+            heart.style.display = 'none';
+        }, 2000);
+    }
+    
     // Slider functionality
     function updateSlider() {
         const itemWidth = items[0].offsetWidth;
