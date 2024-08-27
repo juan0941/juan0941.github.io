@@ -340,15 +340,15 @@ video {
     border: solid 2px rgb(141, 209, 255);
 }
 .contenedor-corazon h1{
-    margin-top: 100px;
+    margin-top: 40px;
     width: 340px;
-    margin-left: 30px;
+    margin-left: 10px;
    text-align: center;
    color: #fff;
 }
 .contenedor-corazon h2{
     width: 340px;
-    margin-left: 25px;
+    margin-left: 5px;
     text-align: center;
     color: #fff;
 }
