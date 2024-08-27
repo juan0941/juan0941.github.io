@@ -327,7 +327,10 @@ video {
     margin-left: 15px;
     margin-top: 20px;
     border: solid 4px rgb(255, 141, 240);
-    background-color: #000;
+    background: url(../img/fondo.jpg);
+    background-size: cover; /* Asegura que la imagen cubra todo el área del elemento */
+    background-position: center; /* Centra la imagen en el elemento */
+    background-repeat: no-repeat;
     border-radius: 60px;
    
 }
@@ -344,13 +347,13 @@ video {
     width: 340px;
     margin-left: 10px;
    text-align: center;
-   color: #fff;
+   
 }
 .contenedor-corazon h2{
     width: 340px;
     margin-left: 10px;
     text-align: center;
-    color: #fff;
+  
 }
 .heart {
     position: absolute;
