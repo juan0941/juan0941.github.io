@@ -324,7 +324,7 @@ video {
     justify-content: center;
     justify-items: center;
     margin-left: 5px;
-    
+    border-bottom: solid 2px black;
 }
 .contenedor-corazon img{
     height: 350px;
@@ -341,7 +341,7 @@ video {
 }
 .contenedor-corazon h2{
     width: 340px;
-    margin-left: 3px;
+    margin-left: 30px;
    text-align: center;
 }
 .heart {
