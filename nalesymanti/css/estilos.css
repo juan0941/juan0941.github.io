@@ -330,17 +330,17 @@ video {
     height: 350px;
     width: 390px;
     margin-top: -10px;
-    margin-left: 5px;
+    margin-left: 10px;
     border-radius: 30px;
 }
 .contenedor-corazon h1{
     margin-top: 100px;
-    width: 390px;
+    width: 340px;
     margin-left: 20px;
    text-align: center;
 }
 .contenedor-corazon h2{
-    width: 330px;
+    width: 340px;
     margin-left: 20px;
    text-align: center;
 }
