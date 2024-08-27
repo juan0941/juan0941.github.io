@@ -335,7 +335,7 @@ video {
     height: 350px;
     width: 340px;
     margin-top: -10px;
-    margin-left: 10px;
+    margin-left: 15px;
     border-radius: 30px;
     border: solid 2px rgb(141, 209, 255);
 }
@@ -348,7 +348,7 @@ video {
 }
 .contenedor-corazon h2{
     width: 340px;
-    margin-left: 5px;
+    margin-left: 10px;
     text-align: center;
     color: #fff;
 }
