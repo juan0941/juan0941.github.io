@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let active = 0;
     let refreshInterval = setInterval(() => next.click(), 3000);
 
-
+    // Función para mostrar el corazón
     function showHeart(element) {
         const heart = element.querySelector('.heart');
         heart.style.display = 'block';
@@ -28,8 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
             heart.style.display = 'none';
         }, 2000);
     }
-    
-    // Slider functionality
+
+    // Funcionalidad para detectar doble toque en dispositivos táctiles
+    document.querySelectorAll('.contenedor-corazon').forEach(element => {
+        let touchCount = 0;
+        element.addEventListener('touchstart', function() {
+            touchCount++;
+            if (touchCount === 1) {
+                setTimeout(() => {
+                    touchCount = 0;
+                }, 300); // Tiempo para detectar un doble toque (300 ms)
+            } else if (touchCount === 2) {
+                showHeart(element);
+                touchCount = 0; // Resetear el contador después del doble toque
+            }
+        });
+    });
+
+    // Funcionalidad del slider
     function updateSlider() {
         const itemWidth = items[0].offsetWidth;
         slider.style.transform = `translateX(-${active * itemWidth}px)`;
