@@ -141,6 +141,7 @@ img {
 .logo h2, .navegacion a {
     font-size: 2.4rem;
     color: var(--blanco);
+    text-align: center;
 }
 
 .navegacion a {
@@ -219,6 +220,8 @@ video {
     height: auto;
     border-radius: 20px;
     display: block;
+    margin-top: 100px;
+    border: solid 2px black;
 }
 
 
@@ -321,7 +324,7 @@ video {
 
 .contenedor-corazon{
     
-    width: 90%;
+    width: 92%;
     justify-content: center;
     justify-items: center;
     margin-left: 15px;
@@ -332,13 +335,15 @@ video {
     background-position: center; /* Centra la imagen en el elemento */
     background-repeat: no-repeat;
     border-radius: 60px;
-   
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
 }
 .contenedor-corazon img{
     height: 350px;
     width: 340px;
     margin-top: -10px;
-    margin-left: 12px;
+    margin-left: 20px;
     border-radius: 30px;
     border: solid 2px rgb(141, 209, 255);
 }
@@ -346,14 +351,18 @@ video {
     margin-top: 40px;
     width: 340px;
     margin-left: 10px;
-   text-align: center;
-   
+    text-align: center;
+    color: rgb(255, 141, 240);
+    background: #ffffff5d;
+    border-radius: 20px;
 }
 .contenedor-corazon h2{
     width: 340px;
     margin-left: 10px;
     text-align: center;
-  
+    background: #ffffff5d;
+    border-radius: 20px;
+    margin-bottom: 30px;
 }
 .heart {
     position: absolute;
