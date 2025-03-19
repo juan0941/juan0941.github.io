@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tus flores amarillas❣️❣️</title>
+    <style>
+        :root {
+            --primary-color: #9b59b6; /* Color morado */
+            --secondary-color: #FFFFFF;
+            --text-color: #333;
+            --button-hover: #8e44ad; /* Color morado más oscuro */
+            --shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f9c0f2, #d6a5f5); /* Gradiente rosado y morado */
+        }
+
+        .container {
+            background: var(--secondary-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            position: relative;
+            margin: auto;
+            padding: 19px 22px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 28px;
+            background: rgba(255, 157, 247, 0.5); /* Fondo rosado */
+        }
+
+        .cta:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 28px;
+            background: rgba(255, 157, 247, 0.5); /* Fondo rosado */
+            width: 56px;
+            height: 56px;
+            transition: all 0.3s ease;
+        }
+
+        .cta span {
+            position: relative;
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 900;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+
+        .cta svg {
+            position: relative;
+            top: 0;
+            margin-left: 10px;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke: #111;
+            stroke-width: 2;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .cta:hover:before {
+            width: 100%;
+            background: #f79dff; /* Rosado más intenso */
+        }
+
+        .cta:hover svg {
+            transform: translateX(0);
+        }
+
+        .cta:active {
+            transform: scale(0.96);
+        }
+
+        /* Estilos para el popup */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .popup h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .popup p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: var(--button-hover);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> ❣️ ❣️Feliz Día ❣️ ❣️</h1>
+        <div id="navigateButton" class="cta">
+            <span>Presioname</span>
+            <svg width="13px" height="10px" viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Popup para mostrar mensaje -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup">
+            <h2>Redirección</h2>
+            <p>Serás redirigida a la siguiente pantalla, feliz día de las flores amarillas ❣️ ❣️</p>
+            <button id="closePopup">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("navigateButton").addEventListener("click", function() {
+            // Mostrar popup
+            document.getElementById("popupOverlay").style.display = "flex";
+        });
+
+        document.getElementById("closePopup").addEventListener("click", function() {
+            // Cerrar popup
+            document.getElementById("popupOverlay").style.display = "none";
+            // Redirigir a la otra pantalla
+            window.location.href = "pantalla2.html"; // Asegúrate de que "pantalla2.html" sea el nombre correcto del archivo de destino
+        });
+    </script>
+</body>
+</html>
